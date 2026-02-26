@@ -1,5 +1,36 @@
-<style> .whatsapp-button { display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background-color: #25D366; border-radius: 50%; color: white; font-size: 24px; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; } .whatsapp-button img { width: 32px; height: 32px; } .whatsapp-button:hover { background-color: #1EBE5B; transform: translateY(-2px); box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); } .whatsapp-button:active { background-color: #169F46; transform: translateY(0); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); } </style> <a href="https://wa.me/5541998816816" target="_blank" class="whatsapp-button"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> </a>{% include base_path %}
+<style>
+  .whatsapp-button {
+    /* Posicionamento Fixo */
+    position: fixed;
+    bottom: 20px; /* Distância do fundo */
+    right: 20px;  /* Distância da direita */
+    z-index: 9999; /* Garante que ele fique acima de outros elementos */
 
+    /* Estilo Visual */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .whatsapp-button img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .whatsapp-button:hover {
+    background-color: #1EBE5B;
+    transform: scale(1.1); /* Dá um leve aumento ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+</style>
 {% if page.author_profile or layout.author_profile or page.sidebar %}
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
