@@ -1,36 +1,54 @@
+Com certeza! Para que o botão fique dentro da área da sidebar (alinhado com seus outros ícones e textos) e não flutuando sobre a página, precisamos mudar o comportamento de fixed (fixo na tela) para inline-block ou flex (parte do conteúdo).
+
+Como você já tem uma lista de contatos (e-mail), o ideal é que o WhatsApp siga o mesmo padrão visual para manter a harmonia do layout.
+
+Aqui está o código ajustado para o seu sidebar.html:
+HTML
+
 <style>
-  .whatsapp-fixo {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    width: 60px !important;
-    height: 60px !important;
-    background-color: #25D366 !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    z-index: 999999 !important; /* Valor altíssimo para sobrepor tudo */
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.4) !important;
-    transition: transform 0.3s ease !important;
+  .sidebar-whatsapp-item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
   }
 
-  .whatsapp-fixo:hover {
-    transform: scale(1.1) !important;
-    background-color: #1EBE5B !important;
+  .sidebar-whatsapp-item:hover {
+    opacity: 0.8;
   }
 
-  .whatsapp-fixo img {
-    width: 35px !important;
-    height: 35px !important;
-    border: none !important;
-    display: block !important;
+  .wa-icon-container {
+    background-color: #25D366;
+    width: 28px; /* Tamanho próximo aos ícones do Font Awesome */
+    height: 28px;
+    border-radius: 4px; /* Leve arredondado para combinar com o tema */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px; /* Espaçamento entre ícone e texto */
+  }
+
+  .wa-icon-container img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .wa-text {
+    font-size: 14px; /* Mesma fonte que usamos no e-mail */
+    color: inherit; /* Segue a cor do texto da sua sidebar */
+    font-weight: 500;
   }
 </style>
 
-<a href="https://wa.me/5541998816816" target="_blank" class="whatsapp-fixo">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+<li>
+  <a href="https://wa.me/5541998816816" target="_blank" class="sidebar-whatsapp-item">
+    <div class="wa-icon-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+    <span class="wa-text">WhatsApp</span>
+  </a>
+</li>
 {% if page.author_profile or layout.author_profile or page.sidebar %}
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
