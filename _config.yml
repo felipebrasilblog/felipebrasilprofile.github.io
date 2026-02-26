@@ -30,7 +30,9 @@ author:
   location         : "Curitiba/Matinhos - PR"
   employer         : "SEED-PR"
   uri              : # URL
-  email            : "felipefelicio@gmail.com / felicio.felipe@escola.pr.gov.br" 
+  email pessoal    : "felipefelicio@gmail.com" 
+  email profissional: "felicio.felipe@escola.pr.gov.br" 
+
 
   # Academic websites
   academia         : # URL
