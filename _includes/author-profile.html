@@ -177,6 +177,44 @@
       {% if author.youtube %}
         <li><a href="https://www.youtube.com/@{{ author.youtube }}"><i class="fab fa-fw fa-youtube icon-pad-right" aria-hidden="true"></i>YouTube</a></li>
       {% endif %}
+{% if author.whatsapp %}
+  <style>
+    .sidebar-whatsapp-item {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+      text-decoration: none;
+      color: inherit;
+    }
+    .wa-icon-container {
+      background-color: #25D366;
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+    .wa-icon-container img {
+      width: 14px;
+      height: 14px;
+    }
+    .wa-text {
+      font-size: 0.9em;
+    }
+  </style>
+
+  <li>
+    <a href="https://wa.me/{{ author.whatsapp }}" target="_blank" class="sidebar-whatsapp-item">
+      <div class="wa-icon-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      </div>
+      <span class="wa-text">WhatsApp</span>
+    </a>
+  </li>
+{% endif %}
+      
       {% if author.zhihu %}
       <li><a href="https://www.zhihu.com/people/{{ author.zhihu }}"><i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i>Zhihu</a></li>
       {% endif %}      
